@@ -144,7 +144,7 @@ def main():
     clock = pygame.time.Clock()
     start_time = pygame.time.get_ticks()
     FPS_TICK = pygame.time.Clock()
-    FPS = 10
+    FPS = 60
     start = time.time()
     DISPLAY = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT+50))
     pygame.display.set_caption("Sudoku")
@@ -242,7 +242,7 @@ def main():
                                 xp, yp = getCoords(MOUSE_POSX, MOUSE_POSY)
                                 if locked[yp][xp] == 1:
                                     pass
-                                elif not solver.check_location_is_safe(board, xp, yp, key):
+                                elif not solver.check_location_is_safe(board, yp, xp, key):
                                     strikes = strikes + 1
                                     if strikes == 3:
                                         gameOver = True
@@ -255,10 +255,13 @@ def main():
 
                 refreshDisplay()
                 if isClicked == True:
-                    print("(" + str(MOUSE_POSX) + "," + str(MOUSE_POSY) + ")")
                     drawBox(MOUSE_POSX, MOUSE_POSY)
 
-                drawFooter(strikes, play_time)
+                # drawFooter(strikes, play_time)
+        if gameOver or showSoln:
+            pass
+        else:
+            drawFooter(strikes, play_time)
         if hover:
             changeBtn()
         pygame.display.update()

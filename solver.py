@@ -61,11 +61,7 @@ def solve_sudoku(arr):
 
 
 def getSolve(grid):
-    print_grid(grid)
-    print()
-    print()
     if(solve_sudoku(grid)):
-        print_grid(grid)
         return grid
     else:
         print("No solution exists")
