@@ -1,6 +1,9 @@
 # Sudoku-Solver
 Interactive 9x9 Soduko game built using pygame module. Random games are scraped from [this site](http://www.menneske.no/sudoku/eng/random.html) at startup using python's  
-BeautifulSoup module. Scraped puzzles are solved using backtracking.
+BeautifulSoup module. Scraped puzzles are solved using backtracking.  
+<p align="center">
+  <img src="https://raw.githubusercontent.com/jtn-b/Sudoku-Solver/master/res/preview.png" />
+</p>
 
 ## Installing & Launching
 1. Make sure Python and pip are installed.
